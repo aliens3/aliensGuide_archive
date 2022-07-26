@@ -1,0 +1,18 @@
+
+
+
+
+    {% for post in postslist %}
+                <div class="box">
+                    <strong>
+                        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+                    </strong>
+                    <time datetime="{{ post.date | htmlDateString }}" style="padding: 0.5rem 0 ; font-size: medium">{{ post.date | readableDate }}</time>
+                    <div style="font-size: small ; width: 90%; margin:auto" >
+                        {{ post.data.description | safe }}
+                    </div>
+                </div>
+    {% endfor %}
+
+
+

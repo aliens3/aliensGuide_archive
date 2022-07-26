@@ -1,0 +1,23 @@
+---
+layout: layouts/home.njk
+permalink: /posts/
+
+---
+
+
+
+
+<h1 style="margin-top:3rem;" class="center">Archive</h1>
+
+<div style="display:flex; place-content:center">
+<div class="outer">
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}
+</div>
+</div>
+
+{#  pagination:
+  data: collections.posts
+  size: 5
+  alias: posts
+  reverse: true#}

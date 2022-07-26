@@ -4,10 +4,7 @@ description: X=数学とX=古典の場合について、個人と集団という
 date: 2018-05-01
 tags:
   - statistics
-  - psychiatry
-  - fanofeao
-  - o kkeafno kdan
-  - eafoea
+  - mathematics
 layout: layouts/post.njk
 ---
 # X = 数学の場合

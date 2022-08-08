@@ -3,9 +3,10 @@ import csv
 import re
 
 #medium_list = ["movie","book","paper","blog","youtube"]
-medium_list = ["movie"]
+medium_list = ["movie","books","fiction"]
 
 for medium in medium_list :
+    print(medium)
     csv_name = medium + ".csv"
     csv_path = os.path.join("./_data/",csv_name)
     a=os.path.join(".",medium)
@@ -24,13 +25,17 @@ for medium in medium_list :
             Lines = f.readlines()
             for line in Lines:
                 if line.startswith("title:"):
+                    #タイトルに空白があると、ここでエラーになるので注意
                     title=line.replace(" ","").replace(":","").replace("\n","").replace("title","")
                     title_to_mdURL_name[title]=md_url
                     break
-    print(title_to_mdURL_name)
     table_text=""
+    print(csv_path)
     with open(csv_path, newline='') as csvfile:
         spamreader = csv.reader(csvfile,delimiter=',')
+        #for row in spamreader:
+        #    print(row)
+        #csvに空行があるとここでエラーになるので注意
         sorted_spamreader=sorted(spamreader, key=lambda student: student[0]) 
         for i,row in enumerate(sorted_spamreader):
             print(row)
@@ -41,12 +46,10 @@ for medium in medium_list :
             if i == 0:
                 table_text += "| --------- | \n"
     print(table_text)
-    
     index_path = os.path.join("./",medium,"index.md")
     with open(index_path) as idx:
         txt=idx.read()
         #newtxt=txt.replace("####InsertTable####",table_text)
         newtxt= re.sub('<!-- cut# -->[\S\s]*?<!-- endcut# -->', f'<!-- cut# -->\n\n\n{table_text}\n<!-- endcut# -->', txt)
-        print(newtxt)
     with open(index_path, "w") as f:
         f.write(newtxt)

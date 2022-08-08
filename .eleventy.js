@@ -75,7 +75,7 @@ module.exports = function(eleventyConfig) {
     slugify: eleventyConfig.getFilter("slugify")
   }).use(require('markdown-it-footnote')).use(require('markdown-it-emoji'))
   .use(require('markdown-it-sup')).use(require('markdown-it-sub')).use(require('markdown-it-mark'))
-  .use(require('markdown-it-attrs')).use(require('markdown-it-container'), 'warning').use(require('markdown-it-multimd-table'), {
+  .use(require('markdown-it-attrs')).use(require('markdown-it-container'), 'video-container').use(require('markdown-it-multimd-table'), {
     multiline:  false,
     rowspan:    false,
     headerless: false,

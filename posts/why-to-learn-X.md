@@ -1,7 +1,7 @@
 ---
 title: Xをなぜ学ばなくてはいけないのか
 description: X=数学とX=古典の場合について、個人と集団という2つ次元から、この問いを考える。<br>キーワードとなるのはああああああああああ。
-date: 2018-05-01
+date: 2022-07-30
 tags:
   - statistics
   - mathematics
